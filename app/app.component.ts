@@ -12,5 +12,5 @@ import { Component }          from '@angular/core';
   styleUrls: ['.app/resources/css/app.component.css']
 })
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'Seguimiento de inversiones';
 }
