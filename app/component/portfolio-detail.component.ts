@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { Portfolio }        from './portfolio';
-import { PortfolioService }     from './portfolio.service';
+import { Portfolio }        from '../model/portfolio';
+import { PortfolioService }     from '../service/portfolio.service';
 @Component({
   selector: 'my-portfolio-detail',
   templateUrl: 'app/resources/html/portfolio-detail.component.html',

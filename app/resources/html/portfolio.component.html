@@ -1,22 +1,22 @@
-<h2>My Heroes</h2>
+<h2>My portfolios</h2>
 <div>
-  <label>Hero name:</label> <input #heroName />
-  <button (click)="add(heroName.value); heroName.value=''">
+  <label>portfolio name:</label> <input #portfolioName />
+  <button (click)="add(portfolioName.value); portfolioName.value=''">
     Add
   </button>
 </div>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes" (click)="onSelect(hero)"
-      [class.selected]="hero === selectedHero">
-<!--     <span class="badge">{{hero._id}}</span> -->
-    <span>{{hero.name}}</span>
+<ul class="portfolios">
+  <li *ngFor="let portfolio of portfolios" (click)="onSelect(portfolio)"
+      [class.selected]="portfolio === selectedPortfolio">
+<!--     <span class="badge">{{portfolio._id}}</span> -->
+    <span>{{portfolio.name}}</span>
     <button class="delete"
-      (click)="delete(hero); $event.stopPropagation()">x</button>
+      (click)="delete(portfolio); $event.stopPropagation()">x</button>
   </li>
 </ul>
-<div *ngIf="selectedHero">
+<div *ngIf="selectedPortfolio">
   <h2>
-    {{selectedHero.name | uppercase}} is my hero
+    {{selectedPortfolio.name | uppercase}} is my portfolio
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>

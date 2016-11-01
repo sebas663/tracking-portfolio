@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
-import { Portfolio }         from './portfolio';
-import { PortfolioService }  from './portfolio.service';
+import { Portfolio }         from '../model/portfolio';
+import { PortfolioService }  from '../service/portfolio.service';
 
 @Component({
   selector: 'my-portfolio',
@@ -14,9 +14,9 @@ export class PortfolioComponent implements OnInit {
   constructor(
     private portfolioService: PortfolioService,
     private router: Router) { }
-  getPortfolioes(): void {
+  getPortfolios(): void {
     this.portfolioService
-        .getPortfolioes()
+        .getPortfolios()
         .then(portfolios => this.portfolios = portfolios);
   }
   add(name: string): void {
@@ -39,7 +39,7 @@ export class PortfolioComponent implements OnInit {
         });
   }
   ngOnInit(): void {
-    this.getPortfolioes();
+    this.getPortfolios();
   }
   onSelect(portfolio: Portfolio): void {
     this.selectedPortfolio = portfolio;
