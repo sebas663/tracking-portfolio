@@ -4,6 +4,7 @@ import { Portfolio }         from '../model/portfolio';
 import { PortfolioService }  from '../service/portfolio.service';
 
 @Component({
+  moduleId: module.id,
   selector: 'my-portfolio',
   templateUrl: 'app/resources/html/portfolio.component.html',
   styleUrls: ['app/resources/css/portfolio.component.css']
