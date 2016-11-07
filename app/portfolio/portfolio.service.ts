@@ -16,7 +16,7 @@ export class PortfolioService {
   getPortfolios(): Promise<Portfolio[]> {
     return this.http.get(this.portfolioUrl)
                .toPromise()
-               .then(response => response.json() as Portfolio[])		 
+               .then(response => response.json().data as Portfolio[])		 
                .catch(this.handleError);
   }
   getPortfolio(_id: string): Promise<Portfolio> {
@@ -33,12 +33,12 @@ export class PortfolioService {
        .catch(this.handleError);
   }
   create(name: string): Promise<Portfolio> {
-	//console.log("name " + name);
-	//console.log("name string " + JSON.stringify({name: name}));
+	console.log("name " + name);
+	console.log("name string " + JSON.stringify({name: name}));
     return this.http
       //.post(this.portfolioUrl, JSON.stringify({name: name}))
 	  /* .post(this.portfolioUrl, {name: name}) */
-	  .post(this.portfolioUrl, {name: name}, {headers: this.headers})
+	  .post(this.portfolioUrl, JSON.stringify({name: name}), {headers: this.headers})
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError);
