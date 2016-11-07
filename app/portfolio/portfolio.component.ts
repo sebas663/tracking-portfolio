@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 import { Portfolio }         from '../model/portfolio';
-import { PortfolioService }  from '../service/portfolio.service';
+import { PortfolioService }  from './portfolio.service';
 
 @Component({
   moduleId: module.id,
   selector: 'my-portfolio',
-  templateUrl: 'app/resources/html/portfolio.component.html',
-  styleUrls: ['app/resources/css/portfolio.component.css']
+  templateUrl: 'portfolio.component.html',
+  styleUrls: ['portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
   portfolios: Portfolio[];

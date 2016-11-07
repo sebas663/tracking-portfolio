@@ -10,13 +10,11 @@ import { HttpModule }           from '@angular/http';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './service/in-memory-data.service';
+import { AppRoutingModule }     from './app-routing.module';
+import { AppComponent }         from './app.component';
+import { DashboardComponent }      from './dashboard/dashboard.component';
+import { PortfolioModule }      from './portfolio/portfolio.module';
 
-import { routing }              from './app.routing';
-import { PortfolioService }     from './service/portfolio.service';
-import { AppComponent }         from './component/app.component';
-import { DashboardComponent }   from './component/dashboard.component';
-import { PortfolioComponent }   from './component/portfolio.component';
-import { PortfolioDetailComponent }  from './component/portfolio-detail.component';
 
 @NgModule({
   imports: [
@@ -24,17 +22,12 @@ import { PortfolioDetailComponent }  from './component/portfolio-detail.componen
     FormsModule,
     HttpModule,
 	InMemoryWebApiModule.forRoot(InMemoryDataService),
-/*     AppRoutingModule, */
-	routing
+	PortfolioModule,
+	AppRoutingModule
   ],
   declarations: [
     AppComponent,
-	DashboardComponent,
-    PortfolioDetailComponent,
-    PortfolioComponent
-  ],
-  providers: [
-    PortfolioService,
+	DashboardComponent
   ],
   bootstrap: [ AppComponent ]
 })

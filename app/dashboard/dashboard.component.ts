@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Portfolio } from '../model/portfolio';
-import { PortfolioService }  from '../service/portfolio.service';
+import { PortfolioService }  from '../portfolio/portfolio.service';
 
 
 @Component({
   moduleId: module.id,
   selector: 'my-dashboard',
-  templateUrl: 'app/resources/html/dashboard.component.html',
-  styleUrls: ['app/resources/css/dashboard.component.css']
+  templateUrl: 'dashboard.component.html',
+  styleUrls: ['dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
 
